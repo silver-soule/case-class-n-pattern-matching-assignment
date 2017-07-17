@@ -1,7 +1,7 @@
 package com.knoldus.kip
 
 import com.knoldus.kip.models._
-
+import com.knoldus.kip._
 /**
   * Created by Neelaksh on 15/7/17.
   */
@@ -45,11 +45,22 @@ object Values {
   val scorecardHarshit: Scorecard = Scorecard(3,student3, subjectListBtechWithOneFailure1)
   val scorecardGirish: Scorecard = Scorecard(4,student4, subjectListBtechWithZeroFailure1)
 
-  val scorecardListWithTwoFailures: List[Scorecard] = List(scorecardAshish, scorecardHarshit)
+  val scorecardListWithTwoFailures: List[Scorecard] = List(scorecardAshish, scorecardGaurav)
   val scorecardListWithThreeFailures: List[Scorecard] = List(scorecardAshish, scorecardHarshit, scorecardGaurav)
   val scoreCardListWithZeroFailure: List[Scorecard] = List(scorecardGirish)
 
   //val coursePerformance1: CoursePerformance = CoursePerformance(1,2016,courseAndSubjectsMCA1,scorecardListWithTwoFailures)
   //RamDatabase.add()
 
+  val coursePerformance1 : CoursePerformance = CoursePerformance(1,2017,courseAndSubjectsMCA1,
+    List(scorecardAshish,scorecardGaurav))
+
+  val coursePerformance2 : CoursePerformance = CoursePerformance(2,2017,courseAndSubjectsBTech2,
+    List(scorecardGirish,scorecardHarshit))
+
+
+  {
+    RamDatabase.add(coursePerformance1)
+    RamDatabase.add(coursePerformance2)
+  }
 }

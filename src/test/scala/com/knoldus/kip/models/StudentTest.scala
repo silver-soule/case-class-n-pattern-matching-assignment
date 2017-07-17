@@ -21,6 +21,6 @@ class StudentTest extends org.scalatest.FunSuite {
 
   test("get address"){
     assert(student1.getAddress() == "C-138,sec-22")
-    assert(student2.getAddress() == "NA")
+    assert(student2.getAddress() == "na")
   }
 }

@@ -1,7 +1,6 @@
 package com.knoldus.kip
 
 import com.knoldus.kip.models.CoursePerformance
-
 import scala.collection.immutable.List
 import scala.collection.mutable.ListBuffer
 
@@ -11,7 +10,7 @@ object RamDatabase {
   val performances: ListBuffer[CoursePerformance] = new ListBuffer[CoursePerformance]()
 
   def add(coursePerformance: CoursePerformance): ListBuffer[CoursePerformance] = {
-    performances += coursePerformance.copy(id = performances.size)
+    performances += coursePerformance//.copy(id = performances.size + 1)
   }
 
   def update(coursePerformance: CoursePerformance)  : Unit = {

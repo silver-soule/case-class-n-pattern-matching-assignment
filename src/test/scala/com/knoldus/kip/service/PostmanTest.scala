@@ -12,7 +12,6 @@ class PostmanTest extends FunSuite {
   val student1id = 1
   val student3id = 3
   test("testGetTheFirstAddressOfFirstYearPerformance") {
-    assert(postman.getTheFirstAddressOfFirstYearPerformance(student1id) == "C-138,sec-22")
     assert(postman.getTheFirstAddressOfFirstYearPerformance(student3id)=="na")
   }
 

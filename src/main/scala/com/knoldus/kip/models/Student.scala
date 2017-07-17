@@ -1,5 +1,6 @@
 package com.knoldus.kip.models
 
+
 case class Subject(id: Int, name: String,
                    obtainedMarks: Int,maxMarks: Int) extends ModelIdentifier
 
@@ -12,7 +13,7 @@ case class Student(id: Int, firstName: String, middleName: Option[String], lastN
                    address: Option[String]) extends ModelIdentifier{
 
   def getAddress()  : String  = {
-    address.fold("NA")((a)=>a)
+    address.fold("na"){_.toString}
   }
 
   def getMiddleName() : String =  middleName.map(_.split(" ")(0)).getOrElse("")
@@ -33,12 +34,12 @@ case class Scorecard(id:Int, student:Student, subjects: List[Subject],
   def getSubjectWithMinScore(): Subject = {
     subjects.minBy(_.obtainedMarks)
   }
-
-  def getStudentList(scorecards:List[Scorecard]) : List[String] = {
+/*
+  def getTopperList(scorecards:List[Scorecard]) : List[String] = {
     for { scorecard <- scorecards
        subject = scorecard.getSubjectWithMaxScore()
     } yield scorecard.student.firstName + subject.name + subject.obtainedMarks
-  }
+  }*/
 }
 
 object Scorecard {
